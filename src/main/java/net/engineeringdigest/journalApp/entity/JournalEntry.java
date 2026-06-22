@@ -1,6 +1,7 @@
 package net.engineeringdigest.journalApp.entity;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.Setter;
 import org.bson.types.ObjectId;
@@ -13,6 +14,7 @@ import java.util.Date;
 @Document(collection = "journal_entries")
 @Getter
 @Setter
+//@NoArgsConstructor
 public class JournalEntry {
 
     @Id
