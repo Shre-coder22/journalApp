@@ -10,7 +10,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -64,8 +63,8 @@ public class JournalEntryController {
     public ResponseEntity<?> updateJournalByid(@PathVariable ObjectId myId, @RequestBody JournalEntry newEntry, @PathVariable String username){
         JournalEntry jEntry = journalEntryService.findById(myId).orElse(null);
         if(jEntry != null){
-            jEntry.setTitle(newEntry.getTitle() != null && !newEntry.getTitle().equals("") ? newEntry.getTitle() : jEntry.getTitle());
-            jEntry.setContent(newEntry.getContent() != null && !newEntry.getContent().equals("") ? newEntry.getContent() : jEntry.getContent());
+            jEntry.setTitle(newEntry.getTitle() != null && !newEntry.getTitle().isEmpty() ? newEntry.getTitle() : jEntry.getTitle());
+            jEntry.setContent(newEntry.getContent() != null && !newEntry.getContent().isEmpty() ? newEntry.getContent() : jEntry.getContent());
             journalEntryService.saveEntry(jEntry);
             return new ResponseEntity<>(jEntry, HttpStatus.OK);
         }
