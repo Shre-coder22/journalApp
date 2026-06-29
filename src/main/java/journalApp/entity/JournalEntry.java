@@ -1,4 +1,4 @@
-package net.engineeringdigest.journalApp.entity;
+package journalApp.entity;
 
 import lombok.Getter;
 //import lombok.NoArgsConstructor;

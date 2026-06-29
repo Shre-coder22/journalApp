@@ -1,8 +1,8 @@
-package net.engineeringdigest.journalApp.controller;
+package journalApp.controller;
 
-import net.engineeringdigest.journalApp.entity.User;
-import net.engineeringdigest.journalApp.repository.UserRepository;
-import net.engineeringdigest.journalApp.service.UserService;
+import journalApp.entity.User;
+import journalApp.repository.UserRepository;
+import journalApp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
